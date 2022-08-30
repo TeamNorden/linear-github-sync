@@ -712,14 +712,14 @@ export default async (req: VercelRequest, res: VercelResponse) => {
             });
         }
 
-        // if (req.body.sender.login === "TeamNordenAdmin") {
-        //     console.log(`Skipping over request as it is created by sync.`);
+        if (req.body.sender.login === "teamnordenadmin") {
+            console.log(`Skipping over request as it is created by sync.`);
 
-        //     return res.status(200).send({
-        //         success: true,
-        //         message: `Skipping over request as it is created by sync.`
-        //     });
-        // }
+            return res.status(200).send({
+                success: true,
+                message: `Skipping over request as it is created by sync.`
+            });
+        }
 
         if (
             req.headers["x-github-event"] === "issue_comment" &&
