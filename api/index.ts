@@ -712,7 +712,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
             });
         }
 
-        if (req.body.sender.login === "spacedrive-bot") {
+        if (req.body.sender.login === "TeamNordenAdmin") {
             console.log(`Skipping over request as it is created by sync.`);
 
             return res.status(200).send({
